@@ -17,10 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python
-    - setuptools_scm
+    - python >=3.6
+    - setuptools_scm >=3.4
   run:
-    - python
+    - python >=3.6
     - more-itertools
 
 test:
