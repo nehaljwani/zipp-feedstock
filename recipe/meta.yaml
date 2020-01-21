@@ -10,9 +10,13 @@ source:
   sha256: 7ae5ccaca427bafa9760ac3cd8f8c244bfc259794b5b6bb9db4dda2241575d09
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script:
+    - "cd '{{ RECIPE_DIR }}'"
+    - "{{ PYTHON }} add_version.py"
+    - "cd '{{ SRC_DIR }}'"
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
@@ -24,8 +28,17 @@ requirements:
     - more-itertools
 
 test:
+  source_files:
+    - test_zipp.py
+  requires:
+    - pip
+    # this is a downstream that has a version requirement on zipp
+    - importlib_metadata
   imports:
     - zipp
+  commands:
+    - python -m unittest test_zipp.py
+    - pip check
 
 about:
   home: https://github.com/jaraco/zipp
