@@ -8,15 +8,13 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7ae5ccaca427bafa9760ac3cd8f8c244bfc259794b5b6bb9db4dda2241575d09
+  patches:
+    - use-scm-version.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
-  script:
-    - "cd '{{ RECIPE_DIR }}'"
-    - "{{ PYTHON }} add_version.py"
-    - "cd '{{ SRC_DIR }}'"
-    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
@@ -36,6 +34,8 @@ test:
     - importlib_metadata
   imports:
     - zipp
+  requires:
+    - pip
   commands:
     - python -m unittest test_zipp.py
     - pip check
