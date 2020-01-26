@@ -22,9 +22,10 @@ requirements:
     - pip
     - python >=3.6
     - setuptools_scm >=3.4
+    - toml
   run:
     - python >=3.6
-    - more-itertools
+    - jaraco.itertools
 
 test:
   source_files:
@@ -35,8 +36,6 @@ test:
     - importlib_metadata
   imports:
     - zipp
-  requires:
-    - pip
   commands:
     - python -m unittest test_zipp.py
     - pip check
