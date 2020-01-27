@@ -1,5 +1,5 @@
 {% set name = "zipp" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7ae5ccaca427bafa9760ac3cd8f8c244bfc259794b5b6bb9db4dda2241575d09
+  sha256: feae2f18633c32fc71f2de629bfb3bd3c9325cd4419642b1f1da42ee488d9b98
   patches:
     # See https://github.com/jaraco/zipp/pull/30
     - use-scm-version.patch
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -22,9 +22,10 @@ requirements:
     - pip
     - python >=3.6
     - setuptools_scm >=3.4
+    - toml
   run:
     - python >=3.6
-    - more-itertools
+    - jaraco.itertools
 
 test:
   source_files:
@@ -35,8 +36,6 @@ test:
     - importlib_metadata
   imports:
     - zipp
-  requires:
-    - pip
   commands:
     - python -m unittest test_zipp.py
     - pip check
