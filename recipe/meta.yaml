@@ -25,7 +25,6 @@ requirements:
     - toml
   run:
     - python >=3.6
-    - jaraco.itertools
 
 test:
   source_files:
@@ -34,6 +33,7 @@ test:
     - pip
     # this is a downstream that has a version requirement on zipp
     - importlib_metadata
+    - jaraco.itertools
   imports:
     - zipp
   commands:
