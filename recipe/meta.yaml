@@ -34,6 +34,7 @@ test:
     # this is a downstream that has a version requirement on zipp
     - importlib_metadata
     - jaraco.itertools
+    - func_timeout
   imports:
     - zipp
   commands:
