@@ -1,5 +1,5 @@
 {% set name = "zipp" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5c56e330306215cd3553342cfafc73dda2c60792384117893f3a83f8a1209f50
+  sha256: fddb41c555ab338cdf27bc1d92cc6e3c05db8d1f1e7ba89d9646976702367333
   patches:
     # See https://github.com/jaraco/zipp/pull/30
     - use-scm-version.patch
@@ -34,6 +34,7 @@ test:
     # this is a downstream that has a version requirement on zipp
     - importlib_metadata
     - jaraco.itertools
+    - func_timeout
   imports:
     - zipp
   commands:
