@@ -5,11 +5,13 @@ Home: https://github.com/jaraco/zipp
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zipp-feedstock/blob/master/LICENSE.txt)
 
 Summary: A pathlib-compatible Zipfile object wrapper
 
+Development: https://github.com/jaraco/zipp
 
+Documentation: https://zipp.readthedocs.io/en/latest
 
 Current build status
 ====================
