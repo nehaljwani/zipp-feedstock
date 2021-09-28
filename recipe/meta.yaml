@@ -1,5 +1,5 @@
 {% set name = "zipp" %}
-{% set version = "3.5.0" %}
+{% set version = "3.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f5812b1e007e48cff63449a5e9f4e7ebea716b4111f9c4f9a645f91d579bf0c4
+  sha256: 1fc9641b26f3bd81069b7738b039f2819cab6e3fc3399a953e19d92cc81eff4d
   patches:
     # See https://github.com/jaraco/zipp/pull/30
     - use-scm-version.patch
