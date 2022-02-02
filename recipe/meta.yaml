@@ -13,20 +13,20 @@ source:
     - use-scm-version.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
     - setuptools >=56
     - wheel
     - setuptools_scm >=3.4.1
     - toml
   run:
-    - python >=3.6
+    - python >=3.7
 
 test:
   source_files:
