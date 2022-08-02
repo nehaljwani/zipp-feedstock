@@ -20,7 +20,9 @@ requirements:
     - python >=3.7
     - setuptools >=56
     - wheel
-    - setuptools_scm >=3.4.1
+    # Add upper bound to get around circular dependency
+    # zipp->setuptools_scm->importlib_metadata->zipp
+    - setuptools_scm >=3.4.1,<7
     - toml
   run:
     - python >=3.7
