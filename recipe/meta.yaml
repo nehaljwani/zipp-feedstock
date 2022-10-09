@@ -30,6 +30,7 @@ requirements:
 test:
   source_files:
     - test_zipp.py
+    - _test_params.py
   requires:
     - pip
     # this is a downstream that has a version requirement on zipp
