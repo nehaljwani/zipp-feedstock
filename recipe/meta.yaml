@@ -1,5 +1,5 @@
 {% set name = "zipp" %}
-{% set version = "3.8.1" %}
+{% set version = "3.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 05b45f1ee8f807d0cc928485ca40a07cb491cf092ff587c0df9cb1fd154848d2
+  sha256: 3a7af91c3db40ec72dd9d154ae18e008c69efe8ca88dde4f9a731bb82fe2f9eb
 
 build:
   number: 0
@@ -30,12 +30,15 @@ requirements:
 test:
   source_files:
     - test_zipp.py
+    - _test_params.py
   requires:
     - pip
     # this is a downstream that has a version requirement on zipp
     - importlib_metadata
     - jaraco.itertools
     - func_timeout
+    - jaraco.functools
+    - more-itertools
   imports:
     - zipp
   commands:
