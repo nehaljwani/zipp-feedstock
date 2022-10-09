@@ -36,6 +36,8 @@ test:
     - importlib_metadata
     - jaraco.itertools
     - func_timeout
+    - jaraco.functools
+    - more-itertools
   imports:
     - zipp
   commands:
